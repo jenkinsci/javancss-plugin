@@ -8,6 +8,7 @@ import hudson.slaves.DumbSlave;
 import hudson.tasks.Shell;
 import hudson.tasks.BatchFile;
 import hudson.model.Result;
+import hudson.model.labels.LabelAtom;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class JavaNCSSPublisherTest extends HudsonTestCase {
      */
     public void testOnSlave() throws Exception {
         FreeStyleProject project = createFreeStyleProject();
-        DumbSlave slave = createSlave(new Label("javancss-test-slave"));
+        DumbSlave slave = createSlave(new LabelAtom("javancss-test-slave"));
         
         project.setAssignedLabel(slave.getSelfLabel());
         List<SingleFileSCM> files = new ArrayList<SingleFileSCM>(2);
