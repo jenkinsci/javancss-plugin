@@ -41,14 +41,10 @@ public class JavaNCSSMavenPublisher extends AbstractMavenReporterImpl {
      * The artifactId of the Maven plugin that provides the functionality we want to report on.
      */
     private static final String PLUGIN_ARTIFACT_ID = "javancss-maven-plugin";
-    /**
-     * The goal of the Maven plugin that implements the functionality we want to report on.
-     */
-    private static final String PLUGIN_EXECUTE_GOAL = "report";
 
     protected boolean isExecutingMojo(MojoInfo mojo) {
-        return mojo.pluginName.matches(PLUGIN_GROUP_ID, PLUGIN_ARTIFACT_ID)
-                && PLUGIN_EXECUTE_GOAL.equals(mojo.getGoal());
+        return (mojo.pluginName.matches(PLUGIN_GROUP_ID, PLUGIN_ARTIFACT_ID)
+                && "report".equals(mojo.getGoal())) || "site".equals(mojo.getGoal());
     }
 
     protected Ghostwriter newGhostwriter(MavenProject pom, MojoInfo mojo) {
