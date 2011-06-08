@@ -108,7 +108,7 @@ public abstract class AbstractBuildReport<T extends AbstractBuild<?, ?>> extends
 
         populateDataSetBuilder(dataSetBuilder);
 
-        ChartUtil.generateGraph(req, rsp, GraphHelper.buildChart(dataSetBuilder.build()), getGraphWidth(), getGraphHeight());
+        GraphHelper.generateGraph(dataSetBuilder.build(), getGraphWidth(), getGraphHeight()).doPng(req, rsp);
     }
 
 

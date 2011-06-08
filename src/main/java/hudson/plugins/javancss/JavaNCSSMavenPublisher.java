@@ -14,6 +14,8 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
 import java.io.File;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * TODO javadoc.
@@ -94,15 +96,15 @@ public class JavaNCSSMavenPublisher extends AbstractMavenReporterImpl {
     }
 
     @Override
-    public Action getProjectAction(MavenModule module) {
+    public List<? extends Action> getProjectActions(MavenModule module) {
         for (MavenBuild build : module.getBuilds()) {
             if (build.getAction(JavaNCSSBuildIndividualReport.class) != null) {
-                return new JavaNCSSProjectIndividualReport(module);
+                return  Collections.singletonList(new JavaNCSSProjectIndividualReport(module));
             }
         }
-        return null;
+        return Collections.EMPTY_LIST;
     }
-
+    
     @Extension
     public static final DescriptorImpl DESCRIPTOR = new DescriptorImpl();
 

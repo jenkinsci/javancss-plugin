@@ -13,6 +13,7 @@ import hudson.plugins.helpers.GraphHelper;
 import hudson.plugins.javancss.parser.Statistic;
 import hudson.util.ChartUtil;
 import hudson.util.DataSetBuilder;
+import hudson.util.Graph;
 import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.StaplerResponse;
 
@@ -104,8 +105,7 @@ public abstract class AbstractProjectReport<T extends AbstractProject<?, ?>> ext
 
         populateDataSetBuilder(dataSetBuilder);
 
-        ChartUtil.generateGraph(req, rsp, GraphHelper.buildChart(dataSetBuilder.build()), getGraphWidth(),
-                getGraphHeight());
+        GraphHelper.generateGraph(dataSetBuilder.build(), getGraphWidth(), getGraphHeight()).doPng(req, rsp);
     }
 
     /**

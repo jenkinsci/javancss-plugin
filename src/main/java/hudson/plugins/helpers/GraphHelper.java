@@ -46,6 +46,16 @@ public class GraphHelper {
         rsp.sendRedirect2(req.getContextPath() + "/images/headless.png");
     }
 
+    public static Graph generateGraph(final CategoryDataset dataset, int width, int height) {
+        return new Graph(-1, width, height) {
+
+            @Override
+            protected JFreeChart createGraph() {
+                return buildChart(dataset);
+            }
+        };
+    }
+    
     public static JFreeChart buildChart(CategoryDataset dataset) {
 
         final JFreeChart chart = ChartFactory.createLineChart(
