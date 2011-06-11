@@ -11,7 +11,7 @@
             <st:include it="${from}" page="normalGraph.jelly"/>
             </a>
             <div style="text-align:right">
-                <a href="${relativeUrlPath}enlargedGraph">enlarge</a>
+                <a href="${relativeUrlPath}enlargedGraph">${%enlarge}</a>
             </div>
         </div>
     </j:if>

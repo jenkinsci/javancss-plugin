@@ -5,19 +5,19 @@
     <table border="1px" class="pane sortable">
         <thead>
             <tr>
-                <th>Package</th>
-                <th title="Class count">Classes</th>
-                <th title="Function count">Functions</th>
-                <th title="Javadoc count">Javadocs</th>
-                <th title="Non-commenting Source Statements">NCSS</th>
-                <th title="Javadoc line count">JLC</th>
-                <th title="Single-line comment line count">SLCLC</th>
-                <th title="Multi-line comment line count">MLCLC</th>
+                <th>${%Package}</th>
+                <th title="${%Class count}">${%Classes}</th>
+                <th title="${%Function count}">${%Functions}</th>
+                <th title="${Javadoc count}">${%Javadocs}</th>
+                <th title="${%Non-commenting Source Statements}">${%NCSS}</th>
+                <th title="${%Javadoc line count}">${%JLC}</th>
+                <th title="${%Single-line comment line count}">${%SLCLC}</th>
+                <th title="${%Multi-line comment line count}">${%MLCLC}</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th align="left">Totals</th>
+                <th align="left">${%Totals}</th>
                 <th align="right">${it.totals.classes}</th>
                 <th align="right">${it.totals.functions}</th>
                 <th align="right">${it.totals.javadocs}</th>
