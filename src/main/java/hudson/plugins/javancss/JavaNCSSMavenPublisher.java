@@ -129,7 +129,7 @@ public class JavaNCSSMavenPublisher extends AbstractMavenReporterImpl {
          * {@inheritDoc}
          */
         public String getDisplayName() {
-            return "Publish " + PluginImpl.DISPLAY_NAME;
+            return Messages.JavaNCSSMavenPublisher_DisplayName(PluginImpl.DISPLAY_NAME);
         }
 
         @Override

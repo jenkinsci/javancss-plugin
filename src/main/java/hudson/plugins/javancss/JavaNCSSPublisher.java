@@ -90,7 +90,7 @@ public class JavaNCSSPublisher extends AbstractPublisherImpl {
          * {@inheritDoc}
          */
         public String getDisplayName() {
-            return "Publish " + PluginImpl.DISPLAY_NAME;
+            return Messages.JavaNCSSPublisher_DisplayName(PluginImpl.DISPLAY_NAME);
         }
 
         @Override
