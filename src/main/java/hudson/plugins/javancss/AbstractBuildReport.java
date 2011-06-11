@@ -138,10 +138,10 @@ public abstract class AbstractBuildReport<T extends AbstractBuild<?, ?>> extends
             ChartUtil.NumberOnlyBuildLabel label = new ChartUtil.NumberOnlyBuildLabel(build);
             AbstractBuildReport action = build.getAction(getClass());
             if (action != null) {
-                dataset.add(action.getTotals().getNcss(), "NCSS", label);
-                dataset.add(action.getTotals().getSingleCommentLines(), "Single line comments", label);
-                dataset.add(action.getTotals().getMultiCommentLines(), "Multi-line comments", label);
-                dataset.add(action.getTotals().getJavadocLines(), "Javadocs", label);
+                dataset.add(action.getTotals().getNcss(), Messages.AbstractBuildReport_Label_Ncss(), label);
+                dataset.add(action.getTotals().getSingleCommentLines(), Messages.AbstractBuildReport_Label_SingleCommentLines(), label);
+                dataset.add(action.getTotals().getMultiCommentLines(), Messages.AbstractBuildReport_Label_MultiCommentLines(), label);
+                dataset.add(action.getTotals().getJavadocLines(), Messages.AbstractBuildReport_Label_JavadocLines(), label);
             }
         }
     }

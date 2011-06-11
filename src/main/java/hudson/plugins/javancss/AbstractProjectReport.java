@@ -13,7 +13,6 @@ import hudson.plugins.helpers.GraphHelper;
 import hudson.plugins.javancss.parser.Statistic;
 import hudson.util.ChartUtil;
 import hudson.util.DataSetBuilder;
-import hudson.util.Graph;
 import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.StaplerResponse;
 
@@ -167,10 +166,10 @@ public abstract class AbstractProjectReport<T extends AbstractProject<?, ?>> ext
             ChartUtil.NumberOnlyBuildLabel label = new ChartUtil.NumberOnlyBuildLabel(build);
             AbstractBuildReport action = build.getAction(getBuildActionClass());
             if (action != null) {
-                dataset.add(action.getTotals().getNcss(), "NCSS", label);
-                dataset.add(action.getTotals().getSingleCommentLines(), "Single line comments", label);
-                dataset.add(action.getTotals().getMultiCommentLines(), "Multi-line comments", label);
-                dataset.add(action.getTotals().getJavadocLines(), "Javadocs", label);
+                dataset.add(action.getTotals().getNcss(), Messages.AbstractProjectReport_Label_Ncss(), label);
+                dataset.add(action.getTotals().getSingleCommentLines(), Messages.AbstractProjectReport_Label_SingleCommentLines(), label);
+                dataset.add(action.getTotals().getMultiCommentLines(), Messages.AbstractProjectReport_Label_MultiCommentLines(), label);
+                dataset.add(action.getTotals().getJavadocLines(), Messages.AbstractProjectReport_Label_JavadocLines(), label);
             }
         }
 
