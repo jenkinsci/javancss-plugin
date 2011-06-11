@@ -168,8 +168,8 @@ public abstract class AbstractProjectReport<T extends AbstractProject<?, ?>> ext
             AbstractBuildReport action = build.getAction(getBuildActionClass());
             if (action != null) {
                 dataset.add(action.getTotals().getNcss(), "NCSS", label);
-                dataset.add(action.getTotals().getSingleCommentLines(), "Multi-line comments", label);
-                dataset.add(action.getTotals().getMultiCommentLines(), "Single line comments", label);
+                dataset.add(action.getTotals().getSingleCommentLines(), "Single line comments", label);
+                dataset.add(action.getTotals().getMultiCommentLines(), "Multi-line comments", label);
                 dataset.add(action.getTotals().getJavadocLines(), "Javadocs", label);
             }
         }
