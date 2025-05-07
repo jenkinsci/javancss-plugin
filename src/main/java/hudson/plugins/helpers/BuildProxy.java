@@ -2,7 +2,6 @@ package hudson.plugins.helpers;
 
 import hudson.FilePath;
 import hudson.maven.MavenBuildProxy;
-import hudson.util.IOException2;
 import hudson.model.Action;
 import hudson.model.Result;
 import hudson.model.AbstractBuild;
@@ -104,7 +103,7 @@ public final class BuildProxy implements Serializable {
                                                     BuildListener listener)
             throws IOException, InterruptedException {
         if (e.getCause() instanceof IOException) {
-            throw new IOException2(e.getCause().getMessage(), e);
+            throw new IOException(e.getCause().getMessage(), e);
         }
         if (e.getCause() instanceof InterruptedException) {
             e.getCause().printStackTrace(listener.getLogger());
