@@ -1,7 +1,6 @@
 package hudson.plugins.javancss.parser;
 
 import hudson.model.AbstractBuild;
-import hudson.util.IOException2;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -92,7 +91,7 @@ public class Statistic implements Serializable {
 
 
         } catch (XmlPullParserException e) {
-            throw new IOException2(e);
+            throw new IOException(e);
         } finally {
             if (bis != null) {
                 bis.close();
@@ -175,7 +174,7 @@ public class Statistic implements Serializable {
         } else if (results.length == 1) {
             return results[0];
         } else {
-            
+
             List<String> indivNames = new ArrayList<String>();
             for (Collection<Statistic> result : results) {
                 for (Statistic individual : result) {
